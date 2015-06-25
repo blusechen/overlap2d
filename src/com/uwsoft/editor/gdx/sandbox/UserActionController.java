@@ -35,6 +35,8 @@ import com.uwsoft.editor.renderer.data.LightVO;
 
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Provides interface for user actions/intentions like creating items
  * copying and pasting items and doing redo/undo.
@@ -186,6 +188,9 @@ public class UserActionController {
 	 }
 
 	 public void pasteAction(float x, float y, boolean ignoreCameraPos) {
+		 if(StringUtils.isEmpty(sandbox.fakeClipboard)){
+			 return;
+		 }
 		  CompositeVO tempHolder;
 		  Json json = new Json();
 		  json.setOutputType(JsonWriter.OutputType.json);

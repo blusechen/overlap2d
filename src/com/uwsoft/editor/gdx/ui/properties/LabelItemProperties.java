@@ -18,6 +18,8 @@
 
 package com.uwsoft.editor.gdx.ui.properties;
 
+import java.io.File;
+
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.SelectBox;
@@ -27,12 +29,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.uwsoft.editor.data.manager.DataManager;
 import com.uwsoft.editor.gdx.sandbox.Sandbox;
-import com.uwsoft.editor.gdx.stage.SandboxStage;
 import com.uwsoft.editor.renderer.SceneLoader;
 import com.uwsoft.editor.renderer.actor.IBaseItem;
 import com.uwsoft.editor.renderer.actor.LabelItem;
-
-import java.io.File;
 
 public class LabelItemProperties extends PropertyBox implements IPropertyBox<LabelItem> {
 

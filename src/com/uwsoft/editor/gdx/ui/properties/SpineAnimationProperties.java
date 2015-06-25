@@ -43,8 +43,8 @@ public class SpineAnimationProperties extends PropertyBox implements IPropertyBo
         animationSelectbox = ui.getSelectBoxById("animationSelectbox");
         animationSelectbox.setWidth(90);
         Array<String> animations = new Array<>();
-        for (Animation animation : object.getAnimations()) {
-            animations.add(animation.getName());
+        for (Object animation : object.getAnimations()) {
+            animations.add(((com.esotericsoftware.spine.Animation)animation).getName());
         }
         animationSelectbox.setItems(animations);
         animationSelectbox.setSelected(object.getCurrentAnimationName());
@@ -55,8 +55,8 @@ public class SpineAnimationProperties extends PropertyBox implements IPropertyBo
     @Override
     public void updateView() {
         Array<String> animations = new Array<>();
-        for (Animation animation : ((SpineActor) item).getAnimations()) {
-            animations.add(animation.getName());
+        for (Object animation : ((SpineActor) item).getAnimations()) {
+        	animations.add(((com.esotericsoftware.spine.Animation)animation).getName());
         }
         animationSelectbox.setItems(animations);
         animationSelectbox.setSelected(((SpineActor) item).getCurrentAnimationName());

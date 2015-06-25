@@ -22,9 +22,9 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.esotericsoftware.spine.Animation;
 import com.uwsoft.editor.data.SpineAnimData;
 import com.uwsoft.editor.data.manager.DataManager;
-import com.uwsoft.editor.data.manager.TextureManager;
 import com.uwsoft.editor.gdx.stage.UIStage;
 import com.uwsoft.editor.gdx.ui.payloads.AssetPayloadObject;
 import com.uwsoft.editor.renderer.actor.SpineActor;
@@ -69,7 +69,7 @@ public class SpineAnimationThumbnailBox extends DraggableThumbnailBox {
             animThumb.setY((getHeight()-animThumb.getHeight())/2);
         }
 
-        animThumb.setAnimation(animThumb.skeletonData.getAnimations().get(0).getName());
+        animThumb.setAnimation(((Animation)animThumb.spineData.getAnimations().get(0)).getName());
 
         addListener(new ClickListener() {
             public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {

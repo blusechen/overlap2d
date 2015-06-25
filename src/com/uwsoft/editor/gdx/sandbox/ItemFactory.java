@@ -162,7 +162,7 @@ public class ItemFactory {
         prepareVO(vo, layer.layerName, x, y);
 
         SpineActor itm = new SpineActor(vo, sceneControl.getEssentials(), sceneControl.getCurrentScene());
-        itm.setAnimation(itm.skeletonData.getAnimations().get(0).getName());
+        itm.setAnimation(((com.esotericsoftware.spine.Animation)itm.spineData.getAnimations().get(0)).getName());
 
         addItem(itm, vo);
     }
